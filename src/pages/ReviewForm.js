@@ -13,7 +13,7 @@ import { useTable, useRowSelect } from 'react-table';
 import { Checkbox } from './components/Checkbox';
 import NavCol from './components/NavCol';
 import swal from 'sweetalert';
-import Storehash from './../Contracts/Storehash.json';
+import Storehash from './../Contracts/SafeHash.json';
 import Web3 from 'web3';
 import toHex from 'to-hex';
 
@@ -90,7 +90,7 @@ function Reviewform() {
         if (networkId === 3) { // if we use current netorkId it deploy. if not like id == 42 it will not work
             //   setLoading(false);
             // console.log(Address);
-            const StoreHashContract = new web3.eth.Contract(Storehash.abi, '0xc0340ec7B5C59bB6649f7b37D23C4f97944aC504');
+            const StoreHashContract = new web3.eth.Contract(Storehash.abi, '0x4B7CB4D5070C2518184583cBD00fd773b95C6702');//0xc0340ec7B5C59bB6649f7b37D23C4f97944aC504 Rpostern
             
             const data = JSON.stringify({ SafeEnviro: selectedFlatRows.map((row) => row.original),},null, 2 );
             const hexdata = (toHex(Buffer.from(data)));
